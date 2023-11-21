@@ -4,10 +4,14 @@ import './../styles/App.css';
 
 const App = () => {
   const [pos, setPos] = useState('') 
+  const getMousePosition = (e)=>{
+    setPos(e.clientX+","+e.clientY)
+  }
   useEffect(()=>{
-    window.addEventListener('mousemove',e=>{
-      setPos(e.clientX+","+e.clientY)
-    })
+    window.addEventListener('mousemove',getMousePosition)
+    return ()=>{
+      window.removeEventListener('mousemove', getMousePosition)
+    }
   })
   return (
     <div>
