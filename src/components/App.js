@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
         {/* Do not remove the main div */}
-        <p>The mouse position is {pos}</p>
+        <p>The mouse position is: {pos}</p>
     </div>
   )
 }
